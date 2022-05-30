@@ -1,0 +1,33 @@
+{% extends "backend/base.html" %}
+{% block content %}
+
+
+
+
+        
+  <!-- /.content -->
+  <div class="signup-page-main">
+    <div class="signup-main">  	
+      <div class="signup-head">
+       <h1>Add Category</h1>
+     </div>
+     <div class="signup-block">
+       <form action="{% url 'addcategory' %}" method="post"   enctype="multipart/form-data" >
+        {% csrf_token %}
+        <label for="brand1"><span></span>Category</label>
+         <input type="text" name="category" placeholder="category" required="">
+         <label for="brand1"><span></span>Image</label>
+         <input type="file" name="image1" placeholder="category" required="">
+
+        
+           
+           <div class="clearfix"> </div>
+         </div>
+         <center><input type="submit" name="Sign In" value="Add">					</center>									
+       </form>
+       <div class="sign-down">
+       
+     </div>
+   </div>
+</div>
+{% endblock %}

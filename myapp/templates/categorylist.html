@@ -1,0 +1,32 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<section class="w3l-grids-hny-2">
+	<!-- /content-6-section -->
+	<div class="grids-hny-2-mian py-5">
+		<div class="container py-lg-5">
+				
+			<h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
+			<p class="mb-4 text-center">Handpicked Categories just for you</p>
+			<div class="welcome-grids row mt-5">
+                {% for i in category %}
+				<div class="col-lg-2 col-md-4 col-6 welcome-image">
+						<div class="boxhny13">
+								<a href="{% url 'productlist' %}?id={{i.id}}">
+										<img src="{{i.image.url}}" class="img-fluid" alt="" ></a>
+								<div class="boxhny-content">
+									<h3 class="title">Product
+								</div>
+							</a>
+						</div>
+						<h4><a href="{% url 'productlist' %}?id={{i.id}}">{{i.categoryname}}</a></h4>
+
+				</div>
+				
+				{% endfor %}
+			</div>
+
+		</div>
+	</div>
+</section>
+
+{% endblock %}

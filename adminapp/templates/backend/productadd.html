@@ -1,0 +1,47 @@
+{% extends "backend/base.html" %}
+{% block content %}
+
+
+
+
+        
+  <!-- /.content -->
+  <div class="signup-page-main">
+    <div class="signup-main">  	
+      <div class="signup-head">
+       <h1>Add Products</h1>
+     </div>
+     <div class="signup-block">
+       <form action="{% url 'addproducts' %}" method="post"  enctype="multipart/form-data" >
+        {% csrf_token %}
+        <label >Name</label>
+         <input type="text" name="name" placeholder="" required="">
+         <label>Category</label>
+         <select class="form-control" name="category">
+             {% for c in categorys %}
+               <option value="{{ c.id }}">{{ c.categoryname }} </option>
+             {% endfor %}
+         </select>
+         
+
+         <label >Price</label>
+         <input type="text" name="price" placeholder="" required="">
+
+        
+         <label >Quantity</label>
+         <input type="text" name="quantity" placeholder="" required="">
+        <label>Image</label>
+          <input name="image1"  type="file" value="" required>
+   
+        
+           
+           <div class="clearfix"> </div>
+         </div>
+         <center><input type="submit" name="Sign In" value="Add">					</center>									
+       </form>
+       <div class="sign-down">
+       
+     </div>
+   </div>
+</div>
+{% endblock %}

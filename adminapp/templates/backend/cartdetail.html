@@ -1,0 +1,39 @@
+{% extends "backend/base.html" %}
+{% block content %}
+
+
+<div style="padding: 8rem;">
+<table style="width: 100%" >
+    <tr>
+        <th>#</th>
+
+        <th>name</th>
+        <th>product</th>
+        <th>quantity </th>
+        <th>price</th>
+        
+        
+
+
+        
+        
+
+    </tr>
+    <tr>
+        {% for x in cart %}
+        <td>{{forloop.counter}}</td>
+
+        <td>{{x.user_id.name}}</td>
+       
+        <td>{{x.product_id.name}}</td>
+        <td>{{x.quantity}}</td>
+        <td>{{x.price}}</td>
+        
+
+        
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+{% endblock %}

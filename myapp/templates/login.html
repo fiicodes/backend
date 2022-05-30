@@ -1,0 +1,56 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+
+	<h4>{{msg}}</h4>
+	
+	
+<section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	">
+        <div class="container">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+                    Login 
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+            <div align="center" style="color: red;">{{msgkey}}</div>
+            <div class="" data-selector="header11">
+<div class="back-color">
+	<form action="{% url 'login' %}" method="post"> 
+        {% csrf_token %}
+<div class="form-group">
+<label for="exampleInputEmail1">Name</label>
+<input type="text" class="form-control" id="exampleInputEmail1"   name="name">
+</div>
+
+
+
+<div class="form-group">
+<label for="exampleInputPassword1">Password</label>
+<input type="password" class="form-control" id="exampleInputPassword1" name="password">
+</div> 
+
+  
+
+ 
+                    <div class="form-group-2 text-center">
+                        <button type="submit" class="btn action-button mt-3">Login</button>
+                    </div>
+					
+            </div>
+            </form>
+
+        </div>
+        </div>        
+    </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+
+
+{% endblock %} 

@@ -1,0 +1,61 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<section class="w3l-ecommerce-main">
+	<!-- /products-->
+	<div class="ecom-contenthny py-5">
+		<div class="container py-lg-5">
+			<h3 class="hny-title mb-0 text-center">Shop With <span>Us</span></h3>
+			<p class="text-center">Handpicked Favourites just for you</p>
+			<!-- /row-->
+			<div class="ecom-products-grids row mt-lg-5 mt-3">
+                {% for i in  p %}
+				<div class="col-lg-3 col-6 product-incfhny mt-4">
+					<div class="product-grid2 transmitv">
+                      
+                       
+						<div class="product-image2">
+							<a href="#">
+								<img class="pic-1 img-fluid" src="{{i.image.url}}">
+								<img class="pic-2 img-fluid" src="{{i.image.url}}">
+							</a>
+							<ul class="social">
+									<li><a href="#" data-tip="Quick View"><span class="fa fa-eye"></span></a></li>
+
+									<li><a href="#" data-tip="Add to Cart"><span class="fa fa-shopping-bag"></span></a>
+									</li>
+							</ul>
+							<div class="transmitv single-item">
+								<form action="/product_addcart/?id={{i.id}}" method="post" class="w3pvt-newsletter subscribe-sec">
+									{% csrf_token %}
+																	<!-- <input type="email" name="Email" placeholder="Enter your email..." required="">
+																	<button class="btn submit">Check</button> -->
+									
+															
+																<button class="btn submit" style="margin-top: 3rem;" type="submit">Add to cart</button>
+																<div class="quality-wrapper mt-30 product-quantity" style="display: block;overflow: hidden; position: relative; ">
+																	<label>Qty&nbsp;</label>
+																	<div class="cart-plus-minus"><div class="dec qtybutton">-</div>
+																		<input class="cart-plus-minus-box" type="text" name="qty" value="1" id="qty">
+																		<p name="demo" id="demo"></p>
+																	<div class="inc qtybutton">+</div></div>
+																</div>
+															</form>
+							</div>
+						</div>
+						<div class="product-content">
+							<h3 class="title"><a href="#">{{i.name}} </a></h3>
+							<span class="price">${{i.price}}</span>
+						</div>
+						
+					</div>
+				</div>
+				
+					{% endfor %}
+
+
+			</div>
+			<!-- //row-->
+		</div>
+	</div>
+</section>
+{% endblock %}

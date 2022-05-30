@@ -1,0 +1,53 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+
+
+<div style="padding: 4rem;">
+<table style="width: 100%" >
+    <tr>
+        <th>#</th>
+
+        <th>name</th>
+        <th>img</th>
+        <th>quantity </th>
+        <th>price</th>
+        <th>delete</th>
+
+        <th>total</th>
+        
+
+
+        
+        
+
+    </tr>
+    <tr>
+        {% for x in uv %}
+        <td>{{forloop.counter}}</td>
+
+        <td>{{x.product_id.name}}</td>
+        <td><img src="{{x.product_id.image.url}}" width="150px" height="100px" style="object-fit: contain;"></td>
+        <td>{{x.quantity}}</td>
+        <td>{{x.price}}</td>
+        <!-- <td><a href="/edit/?id={{x.id}}">edit</a></td> -->
+        <td><a href="/delete_cartitem/?id={{x.id}}">del</a></td>
+      
+        
+            <!-- <a href="/status/?id={{x.id}}">rejected -->
+        </td>
+        <td>{{x.total}}</td>
+        <!-- <td><input type="submit" value="accept" name="accept"></td> -->
+        
+
+        
+    </tr>
+    {% endfor %}
+    <tr><td colspan="7" style="text-align: center;">total amount : {{gt}}</td></tr>
+
+    <tr><td colspan="7" style="text-align: center;"><button onclick="javascript:location.href='/payment/?gt={{gt}}'"  style="text-align: center;">make payment</button></td>
+    <td colspan="7" style="text-align: center;"><button onclick="javascript:location.href='/'" style="text-align: center;" >continue shopping</button></td></tr>
+    <td colspan="7" style="text-align: center;"><button onclick="javascript:location.href='/clearcart/'" style="text-align: center;" >clear cart</button></td></tr>
+
+</table>
+</div>
+{% endblock %}

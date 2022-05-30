@@ -1,0 +1,39 @@
+{% extends "backend/base.html" %}
+{% block content %}
+
+
+<div style="padding: 8rem;">
+<table style="width: 100%" >
+    <tr>
+        <th>#</th>
+
+        <th>name</th>
+        <th>date</th>
+        <th>amount </th>
+        <th>status</th>
+        
+        
+
+
+        
+        
+
+    </tr>
+    <tr>
+        {% for x in bill %}
+        <td>{{forloop.counter}}</td>
+
+        <td>{{x.user_id.name}}</td>
+       
+        <td>{{x.date}}</td>
+        <td>{{x.amount}}</td>
+        <td>{{x.status}}</td>
+        
+
+        
+    </tr>
+    {% endfor %}
+
+</table>
+</div>
+{% endblock %}
